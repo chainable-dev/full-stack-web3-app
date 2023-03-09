@@ -1,7 +1,7 @@
 import {ConnectWallet, useContract, useContractRead, Web3Button} from "@thirdweb-dev/react";
 import React, { useState } from "react";
 import Web3 from "web3";
-import wordmark from "../public/favicon.ico";
+// import wordmark from "../public/favicon.ico";
 import Torus from "@toruslabs/torus-embed";
 
 
@@ -14,14 +14,6 @@ export default function Home() {
     "0xB08BD1aa7Ee2291c60CE7FfcA4A070Fe2c5936F5"
   );
 
-  // Read the current greeting
-  const { data: currentGreeting, isLoading } = useContractRead(
-    contract,
-    "greet"
-  );
-
-  // Store the new greeting the user enters in the input in state
-  const [newGreeting, setNewGreeting] = useState("");
 
     const [account, setAccount] = useState();
 
