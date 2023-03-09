@@ -1,5 +1,5 @@
-import { useContract, useContractRead, Web3Button } from "@thirdweb-dev/react";
-import { useState } from "react";
+import {ConnectWallet, useContract, useContractRead, Web3Button} from "@thirdweb-dev/react";
+import React, { useState } from "react";
 
 // Your smart contract address here
 const contractAddress = "0xB08BD1aa7Ee2291c60CE7FfcA4A070Fe2c5936F5";
@@ -21,27 +21,20 @@ export default function Home() {
 
   return (
     <div>
-      {/* Display current greeting */}
-      <p>
-        Current greeting: <b>{isLoading ? "Loading..." : currentGreeting}</b>
-      </p>
 
-      {/* Add a new greeting */}
-      <input
-        type="text"
-        value={newGreeting}
-        className="input"
-        onChange={(e) => setNewGreeting(e.target.value)}
-      />
 
-      <Web3Button
-        contractAddress={contractAddress}
-        action={(contract) => contract.call("setGreeting", newGreeting)}
-        colorMode="light"
-        accentColor="#F213A4"
-      >
-        Set Greeting
-      </Web3Button>
+        <div
+            style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+        >
+            <h1>Chainable Fintech Company</h1>
+
+
+            <ConnectWallet accentColor="#426CB4" colorMode="dark" />
+
+
+        </div>
     </div>
   );
 }
+
+
